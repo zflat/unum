@@ -1,0 +1,22 @@
+Options +FollowSymLinks +ExecCGI
+
+# Spawns 1 process and supports multithreading
+#<IfModule mod_fastcgi.c>
+#AddHandler fastcgi-script .fcgi
+#</IfModule>
+
+SetEnv DB_NAME valDbName
+SetEnv DB_USER valDbUser
+SetEnv DB_PW   valDbPw
+SetEnv DB_HOST valDbHost
+
+# Spawns multiple processes
+<IfModule mod_fcgid.c>
+AddHandler fcgid-script .fcgi
+</IfModule>
+
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ app.fcgi/$1 [QSA,L]
+
+ErrorDocument 500 "{\"error\": {\"code\":\"500\", \"message\":\"Application failed to start properly\"}}"
