@@ -18,8 +18,9 @@ Vagrant.configure("2") do |config|
       "bootstrap.sh",
       "devel.sh",
       "mysql.sh",
-      "build.sh",
+      "apache.sh",
       "node.sh",
+      "build.sh",
     ]
     scripts.each { |script|
       definition.vm.provision :shell, privileged: false, :path => "scripts/vagrant/" << script

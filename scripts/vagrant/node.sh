@@ -13,3 +13,8 @@ export NVM_DIR="$HOME/.nvm"
 nvm install 10
 
 npm install --global mocha
+
+cd /vagrant/tests/integration
+npm install
+
+cd -

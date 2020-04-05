@@ -17,6 +17,7 @@ sudo mkdir -p /var/www/app
 sudo ln -sf /etc/apache2/sites-available/test-default.conf /etc/apache2/sites-enabled/default.conf
 
 # set up the (test) application
+sudo mkdir -p /var/www/app
 sudo cp /vagrant/scripts/vagrant/.htaccess /var/www/app
 sudo sed -i -i "s/valDbName/$APP_USER_TEST/g" /var/www/app/.htaccess
 sudo sed -i -i "s/valDbUser/$APP_USER_TEST/g" /var/www/app/.htaccess
