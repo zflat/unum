@@ -5,7 +5,7 @@
   "main": "",
   "dependencies": {},
   "devDependencies": {
-    "mocha": "^6.2.3",
+    "mocha": "^10.2.0",
     "supertest": "^4.0.2"
   },
   "scripts": {
